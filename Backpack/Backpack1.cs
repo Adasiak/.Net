@@ -6,11 +6,15 @@ namespace Backpack
     public class Backpack1
     {
         int capacity;
+        int total_weight;
+        int total_value;
         List<Item> itemsInBackPack;
         public Backpack1(int capacity) 
         {
             this.capacity = capacity;
             this.itemsInBackPack = new List<Item>();
+            this.total_weight = 0;
+            this.total_value = 0;
         }
         public void getElement(List<Item> items)
         {
@@ -19,7 +23,9 @@ namespace Backpack
                 if(item.GetWeight() < capacity)
                 {
                     this.itemsInBackPack.Add(item);
-                    this.capacity = this.capacity -  item.GetWeight();
+                    this.capacity -= item.GetWeight();
+                    this.total_weight += item.GetWeight();
+                    this.total_value += item.GetValue();
                 }
             }
 
@@ -27,6 +33,14 @@ namespace Backpack
         public List<Item> getItemsinBackpack()
         {
             return this.itemsInBackPack;
+        }
+        public int getTotalWeight() 
+        {
+            return this.total_weight;
+        }
+        public int getTotalValue()
+        {
+            return this.total_value;
         }
     }
 }

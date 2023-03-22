@@ -5,11 +5,13 @@ namespace Backpack
 {
     public class Item
     {
+        int item_index;
         int value;
         int weight;
         double ratio;
-        public Item(int value, int weight)
+        public Item(int item_index,int value, int weight)
         {
+            this.item_index = item_index;
             this.value = value;
             this.weight = weight;
             this.ratio = Decimal.ToDouble(value) / Decimal.ToDouble(weight);
@@ -26,6 +28,10 @@ namespace Backpack
         public int GetValue()
         {
             return this.value;
+        }
+        public int GetIndex()
+        {
+            return this.item_index;
         }
     }
 
