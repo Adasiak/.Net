@@ -19,6 +19,10 @@ namespace WindowForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            listBox4.Items.Clear();
             int k = int.Parse(textBox2.Text);
             int capacity = int.Parse(textBox1.Text);
             Random rnd = new Random();

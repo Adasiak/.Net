@@ -11,7 +11,7 @@ namespace Testy_Lab1
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void CheckListCount()
         {
             List<Item> list = new List<Item>();
             Random rnd = new Random();
@@ -20,12 +20,10 @@ namespace Testy_Lab1
                 list.Add(new Item(j, rnd.Next(1,40) , rnd.Next(1, 40)));
             }
             Assert.AreEqual(10,list.Count);
-            
-
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void CheckItemRatio()
         {
             List<Item> list = new List<Item>();
             int k = 10;
@@ -39,11 +37,10 @@ namespace Testy_Lab1
             {
                 Assert.AreEqual(2, item.GetRatio());
             }
-
         }
 
         [TestMethod]
-        public void TestMethod3()
+        public void CheckBackpackTotalWeight()
         {
             List<Item> list = new List<Item>();
             int k = 10;
@@ -55,10 +52,10 @@ namespace Testy_Lab1
             Backpack1 backpack = new Backpack1(60);
             backpack.getElement(list);
             Assert.AreEqual(10,backpack.getTotalWeight());
-
         }
+
         [TestMethod]
-        public void TestMethod4()
+        public void CheckBacpackTotalValue()
         {
             List<Item> list = new List<Item>();
             int k = 10;
@@ -70,10 +67,10 @@ namespace Testy_Lab1
             Backpack1 backpack = new Backpack1(60);
             backpack.getElement(list);
             Assert.AreEqual(20, backpack.getTotalValue());
-
         }
+
         [TestMethod]
-        public void TestMethod5()
+        public void CheckItemsInBackpack()
         {
             List<Item> list = new List<Item>();
             int k = 10;
@@ -85,10 +82,10 @@ namespace Testy_Lab1
             Backpack1 backpack = new Backpack1(20);
             backpack.getElement(list);
             Assert.AreEqual(4, backpack.getItemsinBackpack().Count);
-
         }
+
         [TestMethod]
-        public void TestMethod6()
+        public void CheckBackpackCapacityLeft()
         {
             List<Item> list = new List<Item>();
             int k = 10;
@@ -102,5 +99,54 @@ namespace Testy_Lab1
             Assert.AreEqual(10, backpack.getCapacity());
         }
 
-        }   
+
+        [TestMethod]
+        public void CheckListCountNotNull()
+        {
+            List<Item> list = new List<Item>();
+            Random rnd = new Random();
+            for (int j = 0; j < 10; j++)
+            {
+                list.Add(new Item(j, rnd.Next(1,40) , rnd.Next(1, 40)));
+            }
+            Assert.IsNotNull(list.Count);
+            
+
+        }
+
+        [TestMethod]
+        public void CheckItemRatioNot()
+        {
+            List<Item> list = new List<Item>();
+            int k = 10;
+            int z = 5;
+            for (int j = 0; j < 10; j++)
+            {
+                list.Add(new Item(j, k, z));
+            }
+
+            foreach (Item item in list)
+            {
+                Assert.AreNotEqual(15, item.GetRatio());
+            }
+
+        }
+
+        [TestMethod]
+        public void CheckBackpackTotalWeightIsTrue()
+        {
+            List<Item> list = new List<Item>();
+            int k = 10;
+            int z = 5;
+            for (int j = 0; j < 2; j++)
+            {
+                list.Add(new Item(j, k, z));
+            }
+            Backpack1 backpack = new Backpack1(60);
+            backpack.getElement(list);
+            Assert.IsFalse(60 == backpack.getTotalWeight());
+
+        }
+       
+    }   
 }
