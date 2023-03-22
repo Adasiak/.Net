@@ -1,0 +1,8 @@
+C:\Users\student\Documents\.Net\Backpack\bin\Debug\Backpack.exe.config
+C:\Users\student\Documents\.Net\Backpack\bin\Debug\Backpack.exe
+C:\Users\student\Documents\.Net\Backpack\bin\Debug\Backpack.pdb
+C:\Users\student\Documents\.Net\Backpack\obj\Debug\Backpack.csproj.AssemblyReference.cache
+C:\Users\student\Documents\.Net\Backpack\obj\Debug\Backpack.csproj.SuggestedBindingRedirects.cache
+C:\Users\student\Documents\.Net\Backpack\obj\Debug\Backpack.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\.Net\Backpack\obj\Debug\Backpack.exe
+C:\Users\student\Documents\.Net\Backpack\obj\Debug\Backpack.pdb
