@@ -23,7 +23,7 @@ namespace WindowForm
         {
             foreach (Item item in items)
             {
-                if (item.GetWeight() < capacity)
+                if (item.GetWeight() <= capacity)
                 {
                     this.itemsInBackPack.Add(item);
                     this.capacity -= item.GetWeight();
@@ -44,6 +44,10 @@ namespace WindowForm
         public int getTotalValue()
         {
             return this.total_value;
+        }
+        public int getCapacity()
+        {
+            return this.capacity;
         }
     }
 }
