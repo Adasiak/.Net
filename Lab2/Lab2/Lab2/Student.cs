@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    internal class Student
+    class Student
     {
-            public int studentId { set; get; }
-            public string studentName { set; get; }
+        public int studentId { set; get; }
+        public string studentName { set; get; }
     }
+
 }
