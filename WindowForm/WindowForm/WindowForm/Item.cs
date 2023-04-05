@@ -1,7 +1,10 @@
-﻿using System.Runtime.InteropServices;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Backpack
+namespace WindowForm
 {
     public class Item
     {
@@ -9,7 +12,7 @@ namespace Backpack
         int value;
         int weight;
         double ratio;
-        public Item(int item_index,int value, int weight)
+        public Item(int item_index, int value, int weight)
         {
             this.item_index = item_index;
             this.value = value;
@@ -34,5 +37,4 @@ namespace Backpack
             return this.item_index;
         }
     }
-
 }

@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Backpack
+namespace WindowForm
 {
     public class Backpack1
     {
@@ -9,7 +12,7 @@ namespace Backpack
         int total_weight;
         int total_value;
         List<Item> itemsInBackPack;
-        public Backpack1(int capacity) 
+        public Backpack1(int capacity)
         {
             this.capacity = capacity;
             this.itemsInBackPack = new List<Item>();
@@ -18,9 +21,9 @@ namespace Backpack
         }
         public void getElement(List<Item> items)
         {
-            foreach(Item item in items)
+            foreach (Item item in items)
             {
-                if(item.GetWeight() < capacity)
+                if (item.GetWeight() <= capacity)
                 {
                     this.itemsInBackPack.Add(item);
                     this.capacity -= item.GetWeight();
@@ -34,13 +37,17 @@ namespace Backpack
         {
             return this.itemsInBackPack;
         }
-        public int getTotalWeight() 
+        public int getTotalWeight()
         {
             return this.total_weight;
         }
         public int getTotalValue()
         {
             return this.total_value;
+        }
+        public int getCapacity()
+        {
+            return this.capacity;
         }
     }
 }
