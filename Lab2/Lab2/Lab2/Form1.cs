@@ -16,9 +16,9 @@ namespace Lab2
         public Form1(string response)
         {
             InitializeComponent();
-            List<Student> students = JsonConvert.DeserializeObject<List<Student>>(response);
-            foreach (var s in students)
-                listBox1.Items.Add(s.studentId + ":\t" + s.studentName);
+            var currentWeather = JsonConvert.DeserializeObject<CurrentWeather>(response);
+            var weatherMain = currentWeather.Weather[0].Main;
+            listBox1.Items.Add(weatherMain);
 
         }
     }

@@ -16,7 +16,7 @@ namespace Lab2
         [STAThread]
         static async Task Main()
         {
-            string call = "http://radoslaw.idzikowski.staff.iiar.pwr.wroc.pl/instruction/students.json";
+            string call = "https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=9901bac8e051c8fb0b5989c9c61f5fde";
             HttpClient client = new HttpClient();
             string response = await client.GetStringAsync(call);
            
