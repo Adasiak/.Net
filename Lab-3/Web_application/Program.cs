@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Web_application.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

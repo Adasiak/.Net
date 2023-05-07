@@ -36,7 +36,7 @@ namespace Web_application.Pages.PokedexCards
             {
                 return Page();
             }
-
+            
             _context.Pokedex.Add(await AddPokemonAsync(Pokedex.Name));
             await _context.SaveChangesAsync();
             return RedirectToPage("./Index");
