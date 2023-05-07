@@ -1,0 +1,43 @@
+﻿@page
+@model Web_application.Pages.PokedexCards.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="site">
+    <div class="logo-image">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" class="logo" />
+    </div>
+    
+   <div class="card-container">
+@foreach (var item in Model.Pokedex) {
+       <div class="card">
+           <h3 class="type">@item.Types[0].Type.Name</h3>
+            <img src=@item.Image alt=@item.Image class="pokemon-image">
+            <h1 class="name">@char.ToUpper(item.Name.ToString()[0])@item.Name.ToString().Substring(1)</h1>
+            <div class="details"> 
+            <h3 class="text-header">Weight: @item.Weight.ToString().Substring(0,2),@item.Weight.ToString().Substring(2) pounds</h3>
+            <h3 class="text-header">Height: @item.Height.ToString().Substring(0,1),@item.Height.ToString().Substring(1) meters</h3>
+            <h3 class="text-header">Abilities:</h3>
+            <ul class="abilities"> 
+                @foreach(var ability in item.Abilities)
+                {
+                    <li class="ability-item">@ability.Ability.Name</li>
+                }
+            </ul>
+                </div>
+                <a asp-page="./Delete" asp-route-id="@item.Id" class="delete-link">
+                    <button class="delete">
+                        Delete a Pokemon
+                    </button>
+                </a>
+       </div>
+            }
+    </div>
+    <a asp-page="Create" class="link">
+        <button class="add">
+            Add New Pokemon
+        </button>
+    </a>
+   
+</div>

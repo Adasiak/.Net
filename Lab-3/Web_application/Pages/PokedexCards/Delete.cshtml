@@ -1,0 +1,21 @@
+﻿@page
+@model Web_application.Pages.PokedexCards.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="logo-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" class="logo" />
+</div>
+<h1 class="header">Delete a Pokemon from a card list</h1>
+
+<h3 class="header">Are you sure you want to delete @Model.Pokedex.Name ?</h3>
+<div> 
+    <form method="post">
+        <input type="hidden" asp-for="Pokedex.Id" />
+        <div class="button-back">
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        <a asp-page="./Index" class="back">Back to List</a>
+        </div>
+    </form>
+</div>

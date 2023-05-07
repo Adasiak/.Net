@@ -1,0 +1,45 @@
+﻿@page
+@model Web_application.Pages.PokedexCards.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="logo-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" class="logo" />
+</div>
+<h1 class="header">Add new friend to the list</h1>
+
+<h4>Pokedex</h4>
+<hr />
+<div class="front">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>     
+            <div class="form-group">
+                <label asp-for="Pokedex.Name" class="control-label"></label>
+                <input asp-for="Pokedex.Name" class="form-control" />
+                <span asp-validation-for="Pokedex.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pokedex.Image" class="control-label">Image Source: </label>
+                <input asp-for="Pokedex.Image" class="form-control" />
+                <span asp-validation-for="Pokedex.Image" class="text-danger"></span>
+            </div>
+            <div class="button-back">
+            
+                <input type="submit" value="Create" class="btn btn-primary" />
+           
+                <div>
+                    <a asp-page="Index" class="back">Back to List</a>
+                </div>
+            </div>
+        
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
